@@ -1,7 +1,15 @@
 const listaDeTeclas = document.querySelectorAll('.tecla')
 
-function tocaSom (idElementoAudio) {
-    document.querySelector(idElementoAudio).play()
+function tocaSom (seletorAudio) {
+    const elemento = document.querySelector(seletorAudio)
+
+    //Tratamento de erros
+    if (elemento && elemento.localName === 'audio') {
+        elemento.play()
+    }else {
+        alert('Elemento não encontrado ou seletor inválido.')
+    }
+
 }
 
 //Reproduzir sons, alterar ação dos botões
@@ -26,4 +34,3 @@ for (let contador = 0; contador < listaDeTeclas.length; contador++) {
     }   
 
 }
-
