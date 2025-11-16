@@ -7,7 +7,17 @@ function tocaSom (idElementoAudio) {
 let contador  = 0
 
 while (contador < listaDeTeclas.length) {
-    listaDeTeclas[contador].onclick = tocaSom
+ 
+    const tecla = listaDeTeclas[contador]
+    const instrumento = listaDeTeclas[contador].classList[1]
+
+    const idAudio =  `#som_${instrumento}`
+
+    console.log(idAudio)
+
+    listaDeTeclas[contador].onclick = function ( ) {
+        tocaSom(idAudio)
+    }
 
     contador = contador + 1
 
